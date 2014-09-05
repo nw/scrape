@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include partials/head.ejs %>
+  </head>
+  <body>
+    <% include partials/header.ejs %>  
+    
+    
+        <% if (propertyId >= 0) { %>
+                <form action="/properties/edit/<%= propertyId%>" method="post">       
+                <%}
+            else {%>
+                 <form action="/properties/create" method="post"> 
+            <% } %>
+
+         
+  
+        <div>
+            <label>Address</label>
+            <input name="address" 
+                <% if (propertyId >= 0) { %>
+                    value="<%= property.address %>"   
+                <%}%>
+            />
+        </div>
+
+        <div>
+            <label>Phone Number</label>
+            <input name="phone"  
+                <% if (propertyId >= 0) { %>
+                    value="<%= property.phone %>"   
+                <%}%>
+
+            />
+        </div>
+        <div>
+            <label>Rating</label>
+            <input name="rating"
+                  <% if (propertyId >= 0) { %>
+                    value="<%= property.rating %>"   
+                <%}%>
+            />
+        </div>
+        <div>
+            <input type="submit" style="text-align: center">
+        </div>
+    </form>
+  
+
+    <% include partials/footer.ejs %>
+
+  </body>
+</html>

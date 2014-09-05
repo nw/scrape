@@ -1,0 +1,41 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<!--[if IE 10]><html class="ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+<head>
+     <% include partials/head.ejs %>
+
+</head>
+<body>
+
+<div>
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Github</td>
+            <td>Twitter</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% students.forEach(function(student){ %>
+            <tr>
+              <td><a href="<%= student.url %>"><%= student.name %></a></td>
+              <td><a href="https://github.com/<%= student.github %>"><%= student.github %></a></td>
+              <td><a href="http://twitter.com/<%= student.twitter %>"><%= student.twitter %></a></td>
+            </tr>
+          <% }) %>
+
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+ <% include partials/footer.ejs %>
+</body>
